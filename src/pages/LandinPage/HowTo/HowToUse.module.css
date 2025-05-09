@@ -1,0 +1,100 @@
+.section {
+    padding: 80px 5%;
+    text-align: center;
+    background-color: #f8faff;
+  }
+  
+  .title {
+    font-size: 2.5rem;
+    color: #1a2e35;
+    margin-bottom: 10px;
+  }
+  
+  .subtitle {
+    font-size: 1.1rem;
+    color: #5c5c5c;
+    margin-bottom: 50px;
+  }
+  
+  .container {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 30px;
+    margin-bottom: 40px;
+  }
+  
+  .box {
+    background: white;
+    padding: 30px 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    width: 300px;
+    text-align: center;
+    transition: transform 0.3s ease;
+  }
+  
+  .box:hover {
+    transform: translateY(-5px);
+  }
+  
+  .image {
+    width: 60px;
+    height: auto;
+    margin-bottom: 20px;
+  }
+  
+  .stepTitle {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #272A3D;
+    margin-bottom: 10px;
+  }
+  
+  .description {
+    font-size: 0.95rem;
+    color: #333;
+  }
+  
+  .button {
+    display: inline-block;
+    padding: 12px 24px;
+    background-color: #3E82C9;
+    color: white;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background 0.3s ease;
+  }
+  
+  .button:hover {
+    background-color: #084298;
+  }
+  .icon {
+    font-size: 3rem;
+    color: #3e82c9;
+    margin-bottom: 15px;
+  }
+  @media (max-width: 768px) {
+    .wrapper {
+      flex-direction: column;
+      padding: 40px 20px;
+    }
+  
+    .hero, .illustration {
+      max-width: 100%;
+      text-align: center;
+    }
+  
+    .hero h1 {
+      font-size: 2.2rem;
+    }
+  
+    .hero p {
+      font-size: 1rem;
+    }
+  
+    .btn {
+      justify-content: center;
+    }
+  }

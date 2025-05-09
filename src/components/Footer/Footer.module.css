@@ -1,0 +1,154 @@
+.ctaSection {
+    background-color: #1b2a3f;
+    color: white;
+    text-align: center;
+    padding: 60px 20px;
+  }
+  
+  .ctaSection h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+  }
+  
+  .ctaButton {
+    background-color: #f0544f;
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 6px;
+    font-size: 1rem;
+    cursor: pointer;
+    margin-bottom: 20px;
+    transition: background 0.3s ease;
+  }
+  
+  .ctaButton:hover {
+    background-color: #d9443e;
+  }
+  
+  .ctaInfo {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    font-size: 0.95rem;
+    opacity: 0.9;
+  }
+  
+  .footer {
+    background-color: #f6f6f6;
+    color: #333;
+    padding: 40px 5%;
+    font-size: 0.95rem;
+  }
+  
+  .footerTop {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 40px;
+  }
+  
+  .footerBrand {
+    flex: 1 1 220px;
+    max-width: 300px;
+  }
+  
+  .footerBrand h3 {
+    color: #1b2a3f;
+    margin-bottom: 10px;
+  }
+  
+  .footerColumns {
+    display: flex;
+    flex: 3;
+    flex-wrap: wrap;
+    gap: 200px; 
+  }
+  
+  
+  .column h4 {
+    margin-bottom: 10px;
+    font-size: 1rem;
+    color: #1b2a3f;
+  }
+  
+  .column ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .column li {
+    margin-bottom: 6px;
+    cursor: pointer;
+  }
+  
+  .column li:hover {
+    text-decoration: underline;
+  }
+  
+  .cookieBar {
+    background-color: #eee;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 5%;
+    font-size: 0.85rem;
+    border-top: 1px solid #ddd;
+  }
+  
+  .cookieBar a {
+    color: #0066cc;
+    text-decoration: underline;
+  }
+  
+  .cookieBtn {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 6px 14px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.85rem;
+  }
+  .socialIcons {
+    display: flex;
+    gap: 12px; /* مسافات بين الأزرار */
+    margin-top: 20px;
+  }
+  
+  .iconButton {
+    background-color: transparent;
+    border: 1px ;
+    border-radius: 50%;
+    padding: 10px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  
+  .iconButton:hover {
+    background-color: #eaeaea;
+  }
+  @media (max-width: 768px) {
+    .wrapper {
+      flex-direction: column;
+      padding: 40px 20px;
+    }
+  
+    .hero, .illustration {
+      max-width: 100%;
+      text-align: center;
+    }
+  
+    .hero h1 {
+      font-size: 2.2rem;
+    }
+  
+    .hero p {
+      font-size: 1rem;
+    }
+  
+    .btn {
+      justify-content: center;
+    }
+  }
