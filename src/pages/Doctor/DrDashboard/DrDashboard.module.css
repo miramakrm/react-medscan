@@ -1,0 +1,124 @@
+body {
+  background-color: #f0f2f5; /* رمادي فاتح */
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
+
+.dashboardContainer {
+  display: flex; /* Use flexbox to arrange sidebar and content */
+  min-height: 100vh; /* Ensure full height */
+   
+
+}
+
+.content {
+  flex: 1; /* Allow content to take remaining width */
+  padding: 20px;
+   margin-top: 30px;
+   
+}
+
+/* الكارد الأبيض اللي جوا الصفحة */
+.cardContainer {
+  background-color: #fff;
+  border-radius: 16px;
+  padding: 30px;
+  margin-top: 30px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+.headerTitle {
+  display: inline-flex; /* أو flex */
+  align-items: center;
+  gap: 6px; /* المسافة بين النص والسهم */
+}
+.arrowIcon {
+  vertical-align: middle;
+  font-size: 2rem; /* زي ما تحبي */
+}
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.header h2 {
+  margin: 0;
+}
+
+.buttonGroup {
+  display: flex;
+  gap: 10px;
+}
+
+/* أزرار الـ Add والـ Filter */
+.addButton,
+.filterButton {
+  padding: 10px 15px;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+.addButton {
+  background-color: #168BD9;
+  color: white;
+  width: 150px;
+}
+
+.filterButton {
+  background-color: #f0f0f0;
+  color: #333;
+}
+
+.tableContainer {
+  width: 100%;
+  overflow-x: auto; /* For horizontal scrolling on smaller screens */
+}
+
+.patientTable {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 20px;
+  
+}
+
+.patientTable th,
+.patientTable td {
+  border: 1px solid #ddd;
+  padding: 10px;
+  text-align: left;
+  
+}
+
+.patientTable th {
+  background-color: #f5f5f5;
+}
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+}
+
+.pagination button {
+  padding: 8px 12px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  cursor: pointer;
+  background-color: white;
+  color: #333;
+}
+
+.pagination button.active {
+  background-color: #007bff;
+  color: white;
+  border-color: #007bff;
+}
+
+.pagination button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}

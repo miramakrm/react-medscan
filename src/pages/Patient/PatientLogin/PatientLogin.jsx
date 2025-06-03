@@ -34,7 +34,7 @@ export default function PatientLogin() {
       setIsLoading(true);
       setTimeout(() => {
         console.log("Logging in with:", formData);
-        navigate("/patient-dashboard");
+        navigate("/patient-chatbot");
         setIsLoading(false);
       }, 1500);
     }

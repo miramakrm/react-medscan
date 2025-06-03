@@ -10,7 +10,7 @@ const DoctorLogin = () => {
   const [selectedRole, setSelectedRole] = useState('doctor');
   const [formData, setFormData] = useState({ email: '', password: '' });
   const [errors, setErrors] = useState({});
-  
+
   const navigate = useNavigate();
 
   const handleForgotPassword = () => {
@@ -43,7 +43,8 @@ const DoctorLogin = () => {
     setErrors(validationErrors);
     if (Object.keys(validationErrors).length === 0) {
       console.log("Logging in with:", formData);
-      // API login call here
+      // هنا يتم التوجيه إلى صفحة الـ chatbot
+      navigate('/doctor-chatbot');
     }
   };
 
@@ -52,18 +53,14 @@ const DoctorLogin = () => {
       <div className={styles.loginSection}>
         <div className={styles.toggleContainer}>
           <div
-            className={`${styles.toggleOption} ${
-              selectedRole === "doctor" ? styles.selected : styles.unselected
-            }`}
+            className={`${styles.toggleOption} ${selectedRole === "doctor" ? styles.selected : styles.unselected}`}
             onClick={() => setSelectedRole("doctor")}
           >
             Doctor
             <FontAwesomeIcon icon={faUserDoctor} style={{ marginLeft: "8px" }} />
           </div>
           <div
-            className={`${styles.toggleOption} ${
-              selectedRole === "patient" ? styles.selected : styles.unselected
-            }`}
+            className={`${styles.toggleOption} ${selectedRole === "patient" ? styles.selected : styles.unselected}`}
             onClick={() => {
               setSelectedRole("patient");
               setTimeout(() => navigate("/patient-login"), 300);

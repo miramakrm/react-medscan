@@ -1,0 +1,139 @@
+.header {
+  position: relative;
+  width: 80vw; 
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 1rem;
+  box-sizing: border-box; 
+}
+.titleSection {
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+}
+.title {
+  font-weight: bold;
+  font-size: 1rem;
+}
+.backIcon {
+  cursor: pointer;
+}
+.userSection {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+.icon {
+  color: gray;
+  font-size: 1rem;
+}
+.avatar {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+}
+.main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+}
+.brandContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+}
+.logo {
+  width: 60px;
+  height: auto;
+  margin-bottom: 40px;
+}
+.brand {
+  font-size: 30px;
+  font-weight: bold;
+  color: #313131;
+  margin-bottom: 40px;
+}
+.infoGrid {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  text-align: center;
+}
+.infoBox {
+  max-width: 200px;
+}
+.infoIcon {
+  font-size: 1.2rem;
+  margin-bottom: 0.3rem;
+}
+.footer {
+  padding: 0.5rem;
+  /* border-top: 1px solid #eee; */
+  display: flex;
+  justify-content: center; 
+  align-items: center;
+}
+
+.inputContainer {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 70%;
+  background-color: #f9f9f9;
+  border: 1px solid #ccc;
+  border-radius: 20px;
+  padding: 0.3rem 0.8rem;
+}
+
+.input {
+  flex: 1;
+  border: none;
+  outline: none;
+  padding: 0.4rem 2rem 0.4rem 1.5rem;
+  border-radius: 20px;
+  font-size: 1rem;
+  background-color: transparent;
+ 
+}
+.leftIcon {
+  position: absolute;
+  left: 8px;
+  font-size: 1.3rem;
+  color: gray;
+  cursor: pointer;
+}
+.leftIcon:hover {
+  color: rgb(32, 32, 32);
+}
+.rightIcons {
+  position: absolute;
+  right: 10px;
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+}
+
+.rightIcons .icon {
+  font-size: 1.3rem;
+  color: gray;
+  cursor: pointer;
+  transition: color 0.2s ease;
+}
+
+.rightIcons .icon:hover {
+  color: rgb(32, 32, 32);
+}
+
+.editIcon {
+  font-size: 1.5rem;
+  color: gray;
+  cursor: pointer;
+}
+.editIcon:hover {
+  color: rgb(32, 32, 32);
+}
