@@ -8,6 +8,7 @@ import {
   faLinkedin,
   faInstagram,
 } from "@fortawesome/free-brands-svg-icons";
+import { Link } from "react-router-dom";
 
 const Footer = () => {
   return (
@@ -18,7 +19,9 @@ const Footer = () => {
           <br />
           from a life-changing journey
         </h2>
-        <button className={styles.ctaButton}>Try Medscan Now</button>
+      <Link to="/patient-login">
+  <button className={styles.ctaButton}>Try Medscan Now</button>
+</Link>
         <div className={styles.ctaInfo}>
           <span>✔ 350+ renowned Doctors</span>
           <span>✔ Virtual health assistant powered by AI</span>

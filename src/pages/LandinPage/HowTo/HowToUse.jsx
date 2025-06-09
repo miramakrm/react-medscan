@@ -38,7 +38,8 @@ function HowToUse() {
         ))}
       </div>
 
-      <a href="#" className={styles.button}>Start Scan Assessment</a>
+      <a href="/patient-signup" className={styles.button}>Start Scan Assessment</a>
+
     </div>
   );
 }

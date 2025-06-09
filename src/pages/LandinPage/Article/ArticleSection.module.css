@@ -21,12 +21,13 @@
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   padding: 20px;
   transition: transform 0.3s;
-  width: 350px;           /* ثبتي العرض */
-  height: 400px;          /* أو استخدمي min-height لو بتحبي الطول يبقى مرن */
+  width: 350px;
+  height: 400px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   margin: 0 10px;
+  box-sizing: border-box;
 }
 
 .card:hover {
@@ -50,14 +51,17 @@
 .desc {
   font-size: 0.95rem;
   color: #5c5c5c;
-  margin-bottom: 10px;
   line-height: 1.5;
-  max-height: 100px; /* تحديد ارتفاع الكارت */
-  overflow: hidden; /* إخفاء النص الزائد */
-  text-overflow: ellipsis; /* إضافة نقاط (...) في نهاية النص الزائد */
-  display: -webkit-box; /* استخدام flexbox */
-  line-clamp: 5; /* عدد السطرات المعروضة */
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  /* -webkit-line-clamp: 5; */
+  -webkit-box-orient: vertical;
+  min-height: 120px;  /* ⬅️ تثبيت ارتفاع مبدئي */
+  max-height: 120px;  /* ⬅️ تأكيد عدم التمدد */
+  flex-grow: 1;
 }
+
 
 .readMore {
   font-weight: bold;

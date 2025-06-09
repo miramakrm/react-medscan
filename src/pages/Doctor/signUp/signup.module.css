@@ -130,6 +130,7 @@
   background-color: #f8f9fa;
   outline: none;
   width:400px;
+   position: relative;
 }
 
 .inputField label {
@@ -150,12 +151,25 @@
 
 .passwordField {
   display: flex;
+  justify-content: space-between;
   align-items: center;
+  width: 100%;
 }
 
 .toggleVisibility {
   margin-left: 10px;
   cursor: pointer;
+  align-items: end;
+    position: absolute;
+  top: 50%;
+  right: 15px;
+  transform: translateY(-50%);
+}
+.loginLink {
+  color: #333333;
+  font-size: 14px;
+  font-weight: bold;
+  text-decoration: none;
 }
 
 .continueButton {
@@ -253,5 +267,46 @@
 
   p, .text {
     color: black;
+  }
+}
+@media (max-width: 768px) {
+  .imageSection img {
+    width: 100%;
+    height: auto;
+    max-height: 300px;
+    border-radius: 20px;
+  }
+
+  .loginSection {
+    width: 90%;
+    padding: 20px;
+  }
+}
+@media (max-width: 600px) {
+  .toggleContainer {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+
+  .toggleOption {
+    font-size: 12px;
+    padding: 10px;
+  }
+
+  .welcomeText {
+    font-size: 24px;
+  }
+
+  .headline {
+    font-size: 12px;
+  }
+
+  .inputField {
+    width: 100%;
+  }
+
+  .continueButton {
+    padding: 12px;
+    font-size: 16px;
   }
 }

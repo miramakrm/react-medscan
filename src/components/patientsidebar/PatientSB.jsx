@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import { FaHandHoldingMedical, FaUserFriends, FaRegUser } from "react-icons/fa";
 import { LiaHistorySolid } from "react-icons/lia";
 import { MdDocumentScanner } from "react-icons/md";
@@ -15,47 +15,90 @@ const PatientSidebar = ({ user }) => {
       <img src={logo} alt="MedScan Logo" className={styles.logo} />
 
       <p className={styles.section}>Sessions</p>
-      <div className={styles.menuItemActive}>
+
+      <NavLink
+        to="/patient-chatbot"
+        className={({ isActive }) =>
+          isActive ? styles.menuItemActive : styles.menuItem
+        }
+      >
         <TfiCommentAlt />
-        <span>Chat with MedScan </span>
-      </div>
-      <div className={styles.menuItem}>
+        <span>Chat with MedScan</span>
+      </NavLink>
+
+      <NavLink
+        to="/medical-advices"
+        className={({ isActive }) =>
+          isActive ? styles.menuItemActive : styles.menuItem
+        }
+      >
         <FaHandHoldingMedical />
         <span>Medical Advices</span>
-      </div>
-      <div className={styles.menuItem}>
+      </NavLink>
+
+      <NavLink
+        to="/medical-history"
+        className={({ isActive }) =>
+          isActive ? styles.menuItemActive : styles.menuItem
+        }
+      >
         <LiaHistorySolid />
         <span>Medical History</span>
-      </div>
-      <div className={styles.menuItem}>
+      </NavLink>
+
+      <NavLink
+        to="/doctor-recommendation"
+        className={({ isActive }) =>
+          isActive ? styles.menuItemActive : styles.menuItem
+        }
+      >
         <FaUserFriends />
         <span>Doctor Recommendation</span>
-      </div>
-      <div className={styles.menuItem}>
+      </NavLink>
+
+      <NavLink
+        to="/patient-scans"
+        className={({ isActive }) =>
+          isActive ? styles.menuItemActive : styles.menuItem
+        }
+      >
         <MdDocumentScanner />
         <span>Patient Scans</span>
-      </div>
+      </NavLink>
 
       <hr className={styles.separator} />
+
       <p className={styles.section}>Other Options</p>
 
-      <div className={styles.menuItem}>
+      <NavLink
+        to="/patient-profile"
+        className={({ isActive }) =>
+          isActive ? styles.menuItemActive : styles.menuItem
+        }
+      >
         <FaRegUser />
         <span>Profile</span>
-      </div>
-      <div className={styles.menuItem}>
+      </NavLink>
+
+      <NavLink
+        to="/patient-settings"
+        className={({ isActive }) =>
+          isActive ? styles.menuItemActive : styles.menuItem
+        }
+      >
         <IoSettingsOutline />
         <span>Settings</span>
-      </div>
+      </NavLink>
 
-      <div className={styles.profile}>
-        <img src={user.avatar} alt="Patient" className={styles.avatar} />
-        <span>@{user.name}</span>
-
-        <Link to="/profile">
-          <IoExitOutline className={styles.exitIcon} />
-        </Link>
-      </div>
+      {user && (
+        <div className={styles.profile}>
+          <img src={user.avatar} alt="Patient" className={styles.avatar} />
+          <span>@{user.name}</span>
+          <NavLink to="/logout">
+            <IoExitOutline className={styles.exitIcon} />
+          </NavLink>
+        </div>
+      )}
     </aside>
   );
 };

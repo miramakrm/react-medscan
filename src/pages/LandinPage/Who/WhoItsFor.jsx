@@ -10,7 +10,7 @@ function WhoItsFor() {
     {
       img: group,
       title: "Symptom Checker for Adults",
-      desc: "Designed for adult health, helping to understand and manage a wide range of adult-specific symptoms."
+      desc: " Designed for adult health, helping to understand and manage a wide range of adult-specific symptoms."
     },
     {
       img: women,

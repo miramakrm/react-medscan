@@ -5,6 +5,7 @@ import doctorImg from "../../../assets/images/DrSignUp/DR.png";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faUserDoctor, faUserInjured ,faEye, faEyeSlash} from "@fortawesome/free-solid-svg-icons";
 import google from "../../../assets/images/DrSignUp/google.png";
+import { Link } from "react-router-dom";
 
 const DoctorSignUp = () => {
     const [showPassword, setShowPassword] = useState(false);
@@ -108,21 +109,24 @@ const DoctorSignUp = () => {
           {errors.email && <p className={styles.error}>{errors.email}</p>}
 
           <label htmlFor="password">Password:</label>
-          <div className={styles.inputField}>
-            <input
-              id="password"
-              type={showPassword ? "text" : "password"}
-              placeholder="Password"
-              value={formData.password}
-              onChange={handleChange}
-            />
-            <span
-              className={styles.toggleVisibility}
-              onClick={() => setShowPassword((prev) => !prev)}
-            >
-              <FontAwesomeIcon icon={showPassword ? faEyeSlash : faEye} />
-            </span>
-          </div>
+        <div className={styles.inputField}>
+  <div className={styles.passwordField}>
+    <input
+      id="password"
+      type={showPassword ? "text" : "password"}
+      placeholder="Password"
+      value={formData.password}
+      onChange={handleChange}
+    />
+    <span
+      className={styles.toggleVisibility}
+      onClick={() => setShowPassword((prev) => !prev)}
+    >
+      <FontAwesomeIcon icon={showPassword ? faEyeSlash : faEye} />
+    </span>
+  </div>
+</div>
+
           {errors.password && <p className={styles.error}>{errors.password}</p>}
 
           <button type="submit" className={styles.continueButton}>
@@ -137,7 +141,8 @@ const DoctorSignUp = () => {
         <div className={styles.loginRedirect}>
           <p>Already a Member?</p>
           {/* تعديل رابط تسجيل الدخول للتوجيه لصفحة login */}
-          <a href="#" onClick={() => navigate("/patient-login")}>LOG IN</a>
+         
+<Link to="/login" className={styles.loginLink}>LOG IN</Link>
         </div>
       </div>
 

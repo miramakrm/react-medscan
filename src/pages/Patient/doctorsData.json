@@ -1,0 +1,53 @@
+[
+  {
+    "id": "1",
+    "name": "Doctor Mohamed Khalil",
+    "imageUrl": "/images/doctor1.png",
+    "title": "Professor of Neurology and Psychiatry, Faculty of Medicine, Tanta University",
+    "specialty": "Neurosurgery",
+    "subSpecialties": ["Pediatric Psychiatry", "Adult Psychiatry"],
+    "overallRating": 4,
+    "numberOfVisitors": 345,
+    "nextAvailability": "2025-07-20",
+    "city": "Cairo",
+    "country": "Egypt",
+    "fees": 500,
+    "askingTime": 25,
+    "callCost": 160,
+    "hospital": "Cleopatra Hospital"
+  },
+  {
+    "id": "2",
+    "name": "Doctor Loubna Nabil",
+    "imageUrl": "/images/doctor2.png",
+    "title": "Consultant of Neurology",
+    "specialty": "Neurosurgery",
+    "subSpecialties": ["Adult Neurology"],
+    "overallRating": 5,
+    "numberOfVisitors": 20,
+    "nextAvailability": "2025-07-22",
+    "city": "Cairo",
+    "country": "Egypt",
+    "fees": 800,
+    "askingTime": 30,
+    "callCost": 160,
+    "hospital": "Cleopatra Hospital"
+  },
+  {
+    "id": "3",
+    "name": "Doctor Ahmed Hassan",
+    "imageUrl": "/images/doctor3.png",
+    "title": "Specialist in Orthopedics",
+    "specialty": "Orthopedics",
+    "subSpecialties": [],
+    "overallRating": 4,
+    "numberOfVisitors": 150,
+    "nextAvailability": "2025-07-25",
+    "city": "Giza",
+    "country": "Egypt",
+    "fees": 450,
+    "askingTime": 20,
+    "callCost": 150,
+    "hospital": "General Hospital"
+  }
+]

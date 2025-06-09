@@ -1,10 +1,10 @@
 import React, { useState } from "react";
-import styles from "../DrProfile/DrProfile.module.css";
-import DrSidebar from "../../../components/drsidebar/DoctorSB";
+import styles from "../PatientProfile/PatientProfile.module.css";
 import drImg from "../../../assets/images/drImages/profil.png";
-import SettingsNav from "../../../components/settingsNav/settingsNav"; 
+import PatientNav from "../../../components/PatientNav/PatientNav";
+import PatientSidebar from "../../../components/patientsidebar/PatientSB";
 
-const DoctorProfile = () => {
+const PatientProfile = () => {
   const [profile] = useState({
     firstName: "Ahmed",
     lastName: "Ali",
@@ -18,10 +18,10 @@ const DoctorProfile = () => {
 
   return (
     <div className={styles.wrapper}>
+      <PatientSidebar /> 
       <div className={styles.layout}>
-        <DrSidebar />
+        <PatientNav user={{ profileImage: drImg }} />
         <div className={styles.mainContent}>
-<SettingsNav user={{ profileImage: drImg }} />
           <div className={styles.container}>
             <div className={styles.header}>
               <img src={drImg} alt="Doctor" className={styles.avatar} />
@@ -107,4 +107,4 @@ const DoctorProfile = () => {
   );
 };
 
-export default DoctorProfile;
+export default PatientProfile;

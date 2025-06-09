@@ -1,14 +1,25 @@
-import React, { useState } from 'react';
-import styles from '../PatientSginUp/PatientSignUp.module.css';
+import React, { useState } from "react";
+import { Link } from "react-router-dom";
+
+import styles from "../PatientSginUp/PatientSignUp.module.css";
 import paImg from "../../../assets/images/patientImages/patient.png";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faUserDoctor, faUserInjured, faEye, faEyeSlash } from "@fortawesome/free-solid-svg-icons";
+import {
+  faUserDoctor,
+  faUserInjured,
+  faEye,
+  faEyeSlash,
+} from "@fortawesome/free-solid-svg-icons";
 import google from "../../../assets/images/DrSignUp/google.png";
-import { useNavigate } from 'react-router-dom';
+import { useNavigate } from "react-router-dom";
 
 export default function SignUp() {
   const [showPassword, setShowPassword] = useState(false);
-  const [formData, setFormData] = useState({ name: '', email: '', password: '' });
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    password: "",
+  });
   const [errors, setErrors] = useState({});
   const navigate = useNavigate();
 
@@ -21,7 +32,8 @@ export default function SignUp() {
     if (!formData.name.trim()) newErrors.name = "Name is required.";
     if (!formData.email.trim()) newErrors.email = "Email is required.";
     if (!formData.password) newErrors.password = "Password is required.";
-    else if (formData.password.length < 6) newErrors.password = "Password must be at least 6 characters.";
+    else if (formData.password.length < 6)
+      newErrors.password = "Password must be at least 6 characters.";
     return newErrors;
   };
 
@@ -42,18 +54,28 @@ export default function SignUp() {
       <div className={styles.loginSection}>
         <div className={styles.toggleContainer}>
           <div className={`${styles.toggleOption} ${styles.selected}`}>
-            Patient <FontAwesomeIcon icon={faUserInjured} style={{ marginLeft: "8px" }} />
+            Patient{" "}
+            <FontAwesomeIcon
+              icon={faUserInjured}
+              style={{ marginLeft: "8px" }}
+            />
           </div>
           <div
             className={`${styles.toggleOption} ${styles.unselected}`}
-            onClick={() => navigate('/signup')}
+            onClick={() => navigate("/signup")}
           >
-            Doctor <FontAwesomeIcon icon={faUserDoctor} style={{ marginLeft: "8px" }} />
+            Doctor{" "}
+            <FontAwesomeIcon
+              icon={faUserDoctor}
+              style={{ marginLeft: "8px" }}
+            />
           </div>
         </div>
 
         <div className={styles.welcomeText}>Welcome!</div>
-        <div className={styles.headline}>Check your sign up and start managing your account</div>
+        <div className={styles.headline}>
+          Check your sign up and start managing your account
+        </div>
 
         <a href="#" className={styles.googleLoginButton}>
           <img src={google} alt="Google Logo" />
@@ -115,13 +137,15 @@ export default function SignUp() {
         </form>
 
         <div className={styles.footerText}>
-          By signing up, you agree to our <a href="#">Privacy Policy</a> and <a href="#">Terms of Service</a>
+          By signing up, you agree to our <a href="#">Privacy Policy</a> and{" "}
+          <a href="#">Terms of Service</a>
         </div>
 
-        <div className={styles.loginRedirect}>
-          <p>Already a Member?</p>
-          <a onClick={() => navigate("/patient-login")}>LOG IN</a>
-        </div>
+       <div className={styles.loginRedirect}>
+  <p>Already a Member?</p>
+  <Link to="/patient-login" className={styles.loginLink}>LOG IN</Link>
+</div>
+
       </div>
 
       <div className={styles.imageSection}>
@@ -130,4 +154,3 @@ export default function SignUp() {
     </div>
   );
 }
-

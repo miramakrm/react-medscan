@@ -195,10 +195,20 @@
   display: flex;
   justify-content: center;
   gap: 5px;
-  color: #333333;
+  color: #616161;
   text-decoration: none;
   ;
 
+}
+.loginLink {
+  color: #616161;
+  text-decoration: underline;
+  cursor: pointer;
+  font-weight: 700;
+}
+
+.loginLink:hover {
+  color: #2b2929;
 }
 
 .imageSection {

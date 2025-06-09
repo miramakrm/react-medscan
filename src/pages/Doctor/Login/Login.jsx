@@ -5,6 +5,7 @@ import doctorImg from '../../../assets/images/DrSignUp/DR.png';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faUserDoctor, faUserInjured } from "@fortawesome/free-solid-svg-icons";
 import google from "../../../assets/images/DrSignUp/google.png";
+import { Link } from "react-router-dom";
 
 const DoctorLogin = () => {
   const [selectedRole, setSelectedRole] = useState('doctor');
@@ -20,9 +21,9 @@ const DoctorLogin = () => {
     navigate(forgotPath);
   };
 
-  const goToPage = (url) => {
-    navigate(url);
-  };
+  // const goToPage = (url) => {
+  //   navigate(url);
+  // };
 
   const handleChange = (e) => {
     const { id, value } = e.target;
@@ -133,9 +134,9 @@ const DoctorLogin = () => {
 
         <div className={styles.footerText}>
           Are you a Newbie?{' '}
-          <a href="#" onClick={() => goToPage('/patient-signup')}>
-            GET STARTED
-          </a>
+     <Link to="/signup" className={styles.yourButtonStyle}>
+  GET STARTED
+</Link>
         </div>
       </div>
 

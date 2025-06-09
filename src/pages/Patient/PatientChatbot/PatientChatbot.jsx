@@ -1,11 +1,9 @@
 import React from "react";
-import { Link } from "react-router-dom";
-
-import styles from "../PatientChatbot/PatientChatbot.module.css";
-import ChatbotHeader from "../../../components/chatbot/chatbotHeader/Header";
+import PatientSidebar from "../../../components/patientsidebar/PatientSB";
+import PatientNav from "../../../components/PatientNav/PatientNav";
+import styles from "./PatientChatbot.module.css";
 import ChatbotMainContent from "../../../components/chatbot/ChatbotScreen/ChatbotScreen";
 import MessageInput from "../../../components/chatbot/MessageInput/MessageInput";
-import PatientSidebar from "../../../components/patientsidebar/PatientSB";  // استيراد PatientSidebar
 
 const PatientChatbot = () => {
   const user = {
@@ -18,13 +16,16 @@ const PatientChatbot = () => {
   };
 
   return (
-    <div className={styles.container}>
-      <PatientSidebar user={user} /> {/* استخدام PatientSidebar هنا */}
-      
-      <div className={styles.chatArea}>
-        <ChatbotHeader user={user} />
-        <ChatbotMainContent />
-        <MessageInput onSend={handleSend} />
+    <div style={{ display: "flex" }}>
+      <PatientSidebar user={user} />
+      <div style={{ flex: 1 }}>
+        <PatientNav />
+        <div className={styles.container}>
+          <div className={styles.chatArea}>
+            <ChatbotMainContent />
+            <MessageInput onSend={handleSend} />
+          </div>
+        </div>
       </div>
     </div>
   );

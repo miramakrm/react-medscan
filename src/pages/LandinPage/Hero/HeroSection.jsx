@@ -1,5 +1,5 @@
 import styles from '../Hero/HeroSection.module.css';
-// import hero from '../../../assets/images/landingPage/hero.png';
+import Drimg from "../../../assets/images/landingPage/herooo.png"
 function HeroSection() {
   return (
     <div className={styles.wrapper} id="home">
@@ -29,7 +29,7 @@ function HeroSection() {
 
       </div>
       <div className={styles.illustration}>
-        {/* <img src={hero} alt="hero Image" width="10000px" /> */}
+       <img src={Drimg} alt="Hero Illustration" className={styles.image} />
       </div>
     </div>
   );

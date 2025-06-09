@@ -18,6 +18,15 @@ import PatientChatbot from "./pages/Patient/PatientChatbot/PatientChatbot";
 import DrDashboard from "./pages/Doctor/DrDashboard/DrDashboard";
 import PatientDetails from "./pages/Doctor/drPatientDashboard/drPatientDashboard";
 import DoctorProfile from "./pages/Doctor/DrProfile/DrProfile";
+import DrSettings from "./pages/Doctor/DrSettings/DrSettings";
+import MedicalForm from "./pages/Patient/MedicalAdvices/MedicalAdvices";
+import MedicalHistory from "./pages/Patient/MedicalHistory/MedicalHistory";
+import DoctorRecommendation from "./pages/Patient/DrRecommendation/DrRecommendation";
+import PatientScans from "./pages/Patient/PatientScans/PatientScans";
+import PatientSettings from "./pages/Patient/PatientSettings/PatientSettings";
+import PatientProfile from "./pages/Patient/PatientProfile/PatientProfile";
+import Madvices from "./pages/Patient/MAdvice/MAdvice";
+
 function App() {
   return (
     <Routes>
@@ -38,6 +47,15 @@ function App() {
       <Route path="/doctor-chatbot" element={<DoctorChatbot />} />
       <Route path="/patient-chatbot" element={<PatientChatbot />} />
       <Route path="/dr-dashboard" element={<DrDashboard />} />
+      <Route path="/settings" element={<DrSettings />} />
+      <Route path="/medical-advices" element={<MedicalForm />} />
+      <Route path="/medical-history" element={<MedicalHistory />} />
+      <Route path="/doctor-recommendation" element={<DoctorRecommendation />} />
+      <Route path="/patient-scans" element={<PatientScans />} />
+      <Route path="/patient-settings" element={<PatientSettings />} />
+      <Route path="/patient-profile" element={<PatientProfile />} />
+      <Route path="/madvices" element={<Madvices />} />
+
       <Route
         path="/dr-patient-dashboard/:patientId"
         element={<PatientDetails />}
