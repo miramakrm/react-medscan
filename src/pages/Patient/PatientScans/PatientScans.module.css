@@ -1,240 +1,247 @@
-.patientScans {
-  background-color: #f5f7fa;
-  font-family: "Inter", sans-serif;
-  min-height: 60vh; /* Ensure it takes full height */
-  display: flex;
-  flex-direction: column;
-  align-items: center; /* Center horizontally */
-}
-/* --- General Layout --- */
+/* --- General Layout (Keep as previously refined for sidebar/mainContent) --- */
 .pageWrapper {
-  display: flex; /* This is correct, creates a flex container for sidebar and main content */
-  height: 100vh; /* Ensures the wrapper takes full viewport height */
-  overflow: hidden; /* Prevents overall page scroll unless specifically allowed on mainContent */
+  display: flex;
+  height: 100vh;
+  overflow: hidden;
 }
 
 .mainContent {
   flex-grow: 1;
   display: flex;
   flex-direction: column;
-  overflow: hidden; /* ✅ يمنع ظهور Scroll */
+  overflow-y: auto; /* Allow scrolling for main content if it overflows */
   background-color: #f5f7fa;
 }
 
-/* --- PatientScans specific styling (already mostly good, just ensuring alignment) --- */
+/* --- Patient Scans Page Specifics --- */
 .patientScans {
-  padding: 5px;
-  background-color: #f5f7fa; /* Keep this for the content background */
+  padding: 20px; /* Adjusted padding to give more breathing room around cards */
+  background-color: #f5f7fa;
   font-family: "Inter", sans-serif;
-  flex-grow: 1; 
-  display: flex; /* Make patientScans itself a flex container */
-  flex-direction: column; /* Stack its children vertically */
-  align-items: center; /* Center children horizontally within patientScans */
-}
-
-
-.cardsContainer {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* بدل 300px */
-  gap: 15px;
-  max-width: 1000px;
-  height: 400px; /* قلل الارتفاع */
-  overflow-y: auto;
-  margin-top: 10px;
-}
-
-/* The rest of your card and button styles remain the same. */
-.header {
-  width: 100%;
-  max-width: 1200px; /* Max width to match content */
-  display: flex;
-  align-items: center;
-padding: 5px 0; 
-}
-.pageTitle {
-  font-size: 28px;
-  font-weight: 400;
-  color: #333;
-  margin-left: 10px;
-}
-
-.cardsContainer {
-  display: grid;
-  grid-template-columns: repeat(
-    auto-fit,
-    minmax(300px, 1fr)
-  ); 
-  gap: 15px;
-  max-width:900px;
-  height: 450px;
-   margin-top: 5px; 
-}
-
-.card {
-  background-color: #ffffff;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-  padding: 18px; /* بدل 25px */
-  border-radius: 10px;
+  flex-grow: 1;
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
+  align-items: center; /* Centers the header and cardsContainer horizontally */
+}
+
+.header {
+  width: 100%;
+  max-width: 900px; /* Aligns with cardsContainer max-width */
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px; /* Reduced margin */
+  padding: 10px 0; /* Adjusted padding */
+}
+
+.pageTitle {
+  font-size: 24px; /* Slightly smaller for the "My Scans" title */
+  font-weight: 500; /* Slightly heavier font weight */
+  color: #333;
+  margin-left: 0; /* Remove left margin from your previous code */
+  text-align: left; /* Align title to the left of its container */
+  flex-grow: 1; /* Allow title to take up space, pushing other elements (if any) */
+}
+
+/* --- Cards Container --- */
+.cardsContainer {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Adjusted minmax for better fit */
+  gap: 20px; /* Increased gap between cards */
+  width: 100%; /* Take full width of patientScans */
+  max-width: 900px; /* Keep consistent with design, adjust as needed */
+  /* Remove height and overflow-y from cardsContainer - individual cards will dictate height */
+  /* margin-top will be handled by padding on patientScans and margin-bottom on header */
+}
+
+/* --- Individual Card Styling --- */
+.card {
+  background-color: #ffffff;
+  border-radius: 12px; /* Slightly more rounded corners */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  padding: 20px; /* Adjusted padding inside the card */
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Center content horizontally within each card */
   position: relative;
   overflow: hidden;
+  min-height: 200px; /* Ensure cards have a minimum height, adjust as needed */
+  justify-content: center; /* Vertically center content if there's extra space */
+  border: 1px solid #e0e0e0; /* Subtle border as seen in the image */
 }
 
 .cardNumber {
   position: absolute;
-  width:40px;
-  height: 40px;
-  background-color: #d3d3d3; /* Blue circle for number */
-  color: #415a77;
+  top: 15px; /* Position from top */
+  left: 15px; /* Position from left */
+  width: 35px; /* Smaller size */
+  height: 35px;
+  background-color: #f0f0f0; /* Light gray background */
+  color: #606060; /* Darker gray number */
   border-radius: 50%;
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 20px;
-  font-weight: bold;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  font-size: 18px; /* Smaller font size for number */
+  font-weight: 600; /* Slightly bolder */
+  /* No box-shadow for the number in the image */
   z-index: 10;
 }
 
 .cardContent {
-  width: 100%; /* Ensure content fills card */
-  padding-top: 30px; /* Make space for the number circle */
-  text-align: center; /* Center internal content */
+  width: 100%;
+  padding-top: 0; /* Remove top padding as number is positioned absolutely */
+  text-align: center; /* All text inside card is centered */
 }
 
 .iconContainer {
   display: flex;
   justify-content: center;
-  margin-bottom: 15px;
-  /* width: ; */
+  margin-bottom: 10px; /* Reduced margin below icon */
+  margin-top: 10px; /* Add a bit of margin above icon to clear the number */
 }
 
 .cardIcon {
-  width: 30px;
-  height: 30px;
-  color: #007bff; /* Blue color for icons */
+  width: 40px; /* Larger icon size from image */
+  height: 40px;
+  color: #007bff; /* Blue color for icons (matches original blue) */
 }
 
 .cardTitle {
-  font-size: 16px;
+  font-size: 18px; /* Slightly larger title font */
   font-weight: 600;
   color: #333;
-  margin-bottom: 10px;
+  margin-bottom: 8px; /* Reduced margin */
 }
 
 .fileStatus {
   font-size: 14px;
   color: #666;
-  margin-bottom: 5px;
+  margin-bottom: 3px; /* Reduced margin */
 }
 
 .fileAccepted {
-  font-size: 13px;
+  font-size: 12px; /* Smaller font for accepted types */
   color: #888;
-  margin-bottom: 15px;
+  margin-bottom: 10px; /* Reduced margin */
 }
 
 .fileInput {
-  display: none; /* Hide default file input */
+  display: none;
 }
 
 .browseButton {
-  background-color: #0070CD;
-  color: #fffcfc;
-  padding: 5px 20px;
-  border: 1px solid #ccc;
+  background-color: #007bff; /* Blue background */
+  color: #fff; /* White text */
+  padding: 8px 18px; /* Adjusted padding to match image */
+  border: none; /* No border */
   border-radius: 6px;
   cursor: pointer;
   font-size: 14px;
   transition: background-color 0.2s ease;
-  margin-bottom: 20px;
+  margin-bottom: 15px; /* Reduced margin */
 }
 
 .browseButton:hover {
-  background-color: #e0e0e0;
+  background-color: #0056b3; /* Darker blue on hover */
 }
 
 .actionButtons {
   display: flex;
-  justify-content: center;
+  justify-content: center; /* Center buttons */
   gap: 10px;
   width: 100%;
-  margin-top: 15px;
+  margin-top: 0; /* Remove top margin, handled by browse button margin-bottom */
 }
 
+.cancelButton,
+.uploadButton {
+  padding: 8px 18px; /* Consistent padding with browse button */
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background-color 0.2s ease;
+  flex: none; /* Do not flex, let content dictate size, or set specific widths if needed */
+  width: 80px; /* Fixed width for buttons to match image, adjust as needed */
+}
 
+.cancelButton {
+  background-color: #f0f0f0; /* Light gray background */
+  color: #606060; /* Darker gray text */
+}
 
-
+.cancelButton:hover {
+  background-color: #e0e0e0;
+}
 
 .uploadButton {
-  background-color: #28a745; /* Green for upload */
+  background-color: #007bff; /* Blue background */
   color: white;
 }
 
 .uploadButton:hover {
-  background-color: #218838;
+  background-color: #0056b3;
 }
 
 .waitingMessage,
 .downloadDescription {
-  font-size: 15px;
-  color: #555;
-  margin-bottom: 5px;
+  font-size: 14px; /* Slightly smaller font */
+  color: #666;
+  margin-bottom: 15px; /* Consistent margin */
 }
 
 .downloadButton {
-  background-color: #0070CD;
+  background-color: #007bff;
   color: white;
-  padding: 5px 15px;
+  padding: 8px 18px; /* Consistent padding */
   border: none;
   border-radius: 6px;
   cursor: pointer;
   font-size: 14px;
   font-weight: 500;
   transition: background-color 0.2s ease;
-  margin-top:2px;
+  margin-top: 10px; /* Adjusted margin */
 }
 
 .downloadButton:hover {
   background-color: #0056b3;
 }
 
-/* Responsive adjustments */
+/* Responsive adjustments (fine-tuned) */
 @media (max-width: 768px) {
   .patientScans {
     padding: 15px;
   }
 
   .pageTitle {
-    font-size: 24px;
+    font-size: 22px;
   }
 
   .cardsContainer {
     grid-template-columns: 1fr; /* Stack cards on small screens */
-    padding: 0 10px;
+    gap: 15px; /* Adjust gap when stacked */
   }
 
-  .cardContent {
-    padding-top: 20px;
+  .card {
+    padding: 15px; /* Reduced card padding */
+    min-height: unset; /* Allow height to collapse if content is short */
   }
 
   .cardNumber {
-    width: 50px;
-    height: 50px;
-    font-size: 24px;
-    top: -10px;
-    left: -10px;
+    width: 30px;
+    height: 30px;
+    font-size: 16px;
+    top: 10px;
+    left: 10px;
   }
 
   .cardIcon {
-    width: 50px;
-    height: 50px;
+    width: 35px;
+    height: 35px;
   }
 
   .cardTitle {
-    font-size: 18px;
+    font-size: 16px;
   }
 
   .browseButton,
@@ -242,11 +249,14 @@ padding: 5px 0;
   .uploadButton,
   .downloadButton {
     width: 100%;
-    max-width: none; /* Allow full width on small screens */
+    max-width: none;
+    padding: 10px; /* Adjust padding for better touch targets */
   }
 
   .actionButtons {
-    flex-direction: column; /* Stack buttons vertically */
+    flex-direction: row; /* Keep buttons side-by-side if they fit, or let flex-wrap handle it */
+    flex-wrap: wrap; /* Allow wrapping if not enough space */
+    justify-content: center;
     gap: 8px;
   }
 }

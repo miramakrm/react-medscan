@@ -10,7 +10,7 @@ import {
   faEye,
   faEyeSlash,
 } from "@fortawesome/free-solid-svg-icons";
-import google from "../../../assets/images/DrSignUp/google.png";
+import google from "../../../assets/images/drImages/google.png";
 import { useNavigate } from "react-router-dom";
 
 export default function SignUp() {

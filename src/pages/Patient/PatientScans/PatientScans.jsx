@@ -3,115 +3,131 @@ import React, { useState } from 'react';
 import styles from '../PatientScans/PatientScans.module.css';
 import PatientSidebar from "../../../components/patientsidebar/PatientSB";
 import PatientNav from "../../../components/PatientNav/PatientNav";
-import { IoCloudUploadOutline } from "react-icons/io5";
-
 const PatientScans = () => {
-  // State for file upload status (for demonstration)
-  const [fileName, setFileName] = useState('No file chosen');
-  const [uploadStatus, setUploadStatus] = useState('');
+  const [selectedFile, setSelectedFile] = useState(null);
+  const [uploading, setUploading] = useState(false);
+  const [analyzing, setAnalyzing] = useState(false);
+  const [resultsReady, setResultsReady] = useState(false);
 
   const handleFileChange = (event) => {
-    if (event.target.files && event.target.files[0]) {
-      setFileName(event.target.files[0].name);
-      setUploadStatus('png, pdf, jpg accepted');
+    if (event.target.files.length > 0) {
+      setSelectedFile(event.target.files[0]);
+    } else {
+      setSelectedFile(null);
     }
   };
 
-  const handleUpload = () => {
-    // Simulate upload logic
-    setUploadStatus('Uploading...');
-    setTimeout(() => {
-      setUploadStatus('Upload successful!');
-    }, 1500);
+  const handleBrowseClick = () => {
+    document.getElementById('fileInput').click();
   };
 
+  const handleUpload = () => {
+    if (selectedFile) {
+      setUploading(true);
+      // Simulate file upload
+      setTimeout(() => {
+        setUploading(false);
+        setAnalyzing(true);
+        // Simulate analysis
+        setTimeout(() => {
+          setAnalyzing(false);
+          setResultsReady(true);
+        }, 3000); // Simulate analysis time
+      }, 2000); // Simulate upload time
+    }
+  };
+
+  const handleCancelUpload = () => {
+    setSelectedFile(null);
+    setUploading(false);
+    setAnalyzing(false);
+    setResultsReady(false);
+  };
+
+  const handleDownloadResults = () => {
+    // Simulate download
+    alert('Downloading results...');
+  };
 
   return (
-   <div className={styles.pageWrapper}>
-  <PatientSidebar />
-  <div className={styles.mainContent}>
-    <PatientNav />
-    <div className={styles.patientScans}>
+       <div style={{ display: "flex" }}>
+      <PatientSidebar />
+      <div style={{ flex: 1 }}>
+        <PatientNav />
+    <div className={styles.patientScansContainer}>
       <div className={styles.header}>
-        <h1 className={styles.pageTitle}>My Scans</h1>
+        <h2 className={styles.title}>My Scans</h2>
       </div>
 
-      <div className={styles.cardsContainer}>
-        {/* Card 1: Upload your scans */}
+      <div className={styles.contentGrid}>
+        {/* Step 1: Upload your scans */}
         <div className={styles.card}>
-          <div className={styles.cardNumber}>1</div>
+          <div className={styles.stepNumber}>1</div>
           <div className={styles.cardContent}>
-            <div className={styles.iconContainer}>
-              {/* Upload icon */}
-            <IoCloudUploadOutline />
-
-            
-            </div>
-            <h2 className={styles.cardTitle}>Upload your scans</h2>
-            <p className={styles.fileStatus}>{fileName}</p>
-            <p className={styles.fileAccepted}>{uploadStatus || 'png, pdf, jpg accepted'}</p>
-            <input
-              type="file"
-              id="fileUpload"
-              className={styles.fileInput}
-              onChange={handleFileChange}
-              accept=".png,.pdf,.jpg,.jpeg"
-            />
-            <button
-              className={styles.browseButton}
-              onClick={() => document.getElementById('fileUpload').click()}
-            >
-              Browse
-            </button>
-            <div className={styles.actionButtons}>
-              <button className={styles.uploadButton} onClick={handleUpload}>Upload</button>
-            </div>
-          </div>
-        </div>
-
-        {/* Card 2: Analyze your scans */}
-        <div className={styles.card}>
-          <div className={styles.cardNumber}>2</div>
-          <div className={styles.cardContent}>
-            <div className={styles.iconContainer}>
-
-
-            </div>
-            <h2 className={styles.cardTitle}>Analyze your scans</h2>
-            <p className={styles.waitingMessage}>Please waiting to get accurate results</p>
-          </div>
-        </div>
-
-        {/* Card 3: Download results */}
-        <div className={styles.card}>
-          <div className={styles.cardNumber}>3</div>
-          <div className={styles.cardContent}>
-            <div className={styles.iconContainer}>
-              {/* Download icon */}
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 24 24"
-                strokeWidth="1.5"
-                stroke="currentColor"
-                className={styles.cardIcon}
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  d="M3 16.5v2.25A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75V16.5M16.5 12L12 16.5m0 0L7.5 12m4.5 4.5V3"
+            <h3 className={styles.cardTitle}>Upload your scans</h3>
+            <p className={styles.fileStatus}>
+              {selectedFile ? selectedFile.name : 'png,pdf,jpg accepted'}
+            </p>
+            {!selectedFile ? (
+              <>
+                <input
+                  type="file"
+                  id="fileInput"
+                  style={{ display: 'none' }}
+                  onChange={handleFileChange}
+                  accept=".png,.pdf,.jpg"
                 />
-              </svg>
-            </div>
-            <h2 className={styles.cardTitle}>Download results</h2>
-            <p className={styles.downloadDescription}>You can download your scans results</p>
-            <button className={styles.downloadButton}>Download</button>
+                <button className={styles.browseButton} onClick={handleBrowseClick}>
+                  browse
+                </button>
+              </>
+            ) : (
+              <div className={styles.uploadActions}>
+                <button className={styles.cancelButton} onClick={handleCancelUpload}>cancel</button>
+                <button
+                  className={styles.uploadButton}
+                  onClick={handleUpload}
+                  disabled={uploading}
+                >
+                  {uploading ? 'Uploading...' : 'upload'}
+                </button>
+              </div>
+            )}
+          </div>
+        </div>
+
+        {/* Step 2: Analyze your scans */}
+        <div className={`${styles.card} ${analyzing ? styles.cardActive : ''}`}>
+          <div className={styles.stepNumber}>2</div>
+          <div className={styles.cardContent}>
+            <h3 className={styles.cardTitle}>Analyze your scans</h3>
+            <p className={styles.cardDescription}>
+              {analyzing ? 'Analyzing...' : 'Please waiting to get accurate results'}
+            </p>
+          </div>
+        </div>
+
+        {/* Step 3: Download results */}
+        <div className={`${styles.card} ${resultsReady ? styles.cardActive : ''}`}>
+          <div className={styles.stepNumber}>3</div>
+          <div className={styles.cardContent}>
+            <h3 className={styles.cardTitle}>Download results</h3>
+            <p className={styles.cardDescription}>
+              You can download your scans results
+            </p>
+            <button
+              className={styles.downloadButton}
+              onClick={handleDownloadResults}
+              disabled={!resultsReady}
+            >
+              Download
+            </button>
           </div>
         </div>
       </div>
     </div>
-        </div>
-        </div>
+      </div>
+      </div>
   );
 };
 

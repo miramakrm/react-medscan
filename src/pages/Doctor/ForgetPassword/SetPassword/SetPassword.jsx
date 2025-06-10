@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import styles from "./SetPassword.module.css";
-import doctorImg from "../../../../assets/images/DrSignUp/DR.png";
+import doctorImg from "../../../../assets/images/drImages/DR.png";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {

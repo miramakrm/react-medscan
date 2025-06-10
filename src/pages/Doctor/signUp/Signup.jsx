@@ -1,10 +1,10 @@
 import React, { useState } from "react";
 import { useNavigate } from 'react-router-dom'; // استيراد useNavigate
 import styles from "../signUp/signup.module.css";
-import doctorImg from "../../../assets/images/DrSignUp/DR.png";
+import doctorImg from "../../../assets/images/drImages/DR.png";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faUserDoctor, faUserInjured ,faEye, faEyeSlash} from "@fortawesome/free-solid-svg-icons";
-import google from "../../../assets/images/DrSignUp/google.png";
+import google from "../../../assets/images/drImages/google.png";
 import { Link } from "react-router-dom";
 
 const DoctorSignUp = () => {

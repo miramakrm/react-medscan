@@ -3,7 +3,7 @@ import { NavLink } from "react-router-dom";  // استبدال Link ب NavLink
 import { TfiCommentAlt } from "react-icons/tfi";
 import { FaUserFriends, FaUserMd } from "react-icons/fa";
 import { IoSettingsOutline, IoExitOutline } from "react-icons/io5";
-import drImg from "../../assets/images/drImages/profil.png";
+import drImg from "../../assets/images/drImages/Image dr.png";
 
 import styles from "../drsidebar/DoctorSB.module.css";
 import logo from "../../../public/logo.png";
@@ -59,7 +59,7 @@ const DrSidebar = ({ user = { avatar: '/default-avatar.png', name: 'Unknown User
 
       <div className={styles.profile}>
         <img src={drImg} alt="Dr Image" className={styles.userAvatar} />
-        <span>@{user.name}</span>
+        <span>{user.name}</span>
 
         <NavLink to="/logout">
           <IoExitOutline className={styles.exitIcon} />

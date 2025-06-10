@@ -27,7 +27,7 @@ const PatientSidebar = ({ user }) => {
       </NavLink>
 
       <NavLink
-        to="/medical-advices"
+        to="/madvices"
         className={({ isActive }) =>
           isActive ? styles.menuItemActive : styles.menuItem
         }
@@ -93,7 +93,7 @@ const PatientSidebar = ({ user }) => {
       {user && (
         <div className={styles.profile}>
           <img src={user.avatar} alt="Patient" className={styles.avatar} />
-          <span>@{user.name}</span>
+          <span>{user.name}</span>
           <NavLink to="/logout">
             <IoExitOutline className={styles.exitIcon} />
           </NavLink>

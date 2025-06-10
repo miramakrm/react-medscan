@@ -4,7 +4,7 @@ import paImg from "../../../assets/images/patientImages/patient.png";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faUserDoctor, faUserInjured, faEye, faEyeSlash } from "@fortawesome/free-solid-svg-icons";
 import { useNavigate } from 'react-router-dom';
-import google from "../../../assets/images/DrSignUp/google.png";
+import google from "../../../assets/images/drImages/google.png";
 
 export default function PatientLogin() {
   const [formData, setFormData] = useState({ email: '', password: '' });

@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
 import styles from '../ForgetPassword/DrForgetPassword.module.css';
-import doctorImg from '../../../../assets/images/DrSignUp/DR.png';
+import doctorImg from '../../../../assets/images/drImages/DR.png';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faUserDoctor, faUserInjured } from '@fortawesome/free-solid-svg-icons';
 import { faFacebook } from '@fortawesome/free-brands-svg-icons';
-import google from "../../../../assets/images/DrSignUp/google.png";
+import google from "../../../../assets/images/drImages/google.png";
 import { useNavigate } from 'react-router-dom';
 
 const ForgotPassword = () => {

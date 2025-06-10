@@ -2,6 +2,9 @@ import React from "react";
 import { IoArrowBack, IoNotificationsOutline } from "react-icons/io5";
 import { useNavigate, Link } from "react-router-dom";
 import styles from "../PatientNav/PatientNav.module.css";
+import { faBell, faChevronDown } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+
 
 const Navbar = ({ title, user, notificationsCount = 0 }) => {
   const navigate = useNavigate();
@@ -16,31 +19,17 @@ const Navbar = ({ title, user, notificationsCount = 0 }) => {
   <h1 className={styles.title}>{title}</h1>
 
   <div className={styles.rightSection}>
-        <Link to="/notifications" className={styles.notificationLink}>
-          <div className={styles.bellWrapper}>
-            <IoNotificationsOutline className={styles.bellIcon} />
-            {notificationsCount > 0 && (
-              <span className={styles.badge}>{notificationsCount}</span>
-            )}
+        <div className={styles.notificationIcon}>
+          <FontAwesomeIcon icon={faBell} />
+        </div>
+        <div className={styles.userInfo}>
+<img src={user?.profileImage || "https://via.placeholder.com/80"} alt="Doctor" />
+          <div className={styles.userDetails}>
+            <span>@{user?.name || "Doctor Name"}</span>
+<span>@{user?.role || "Doctor"}</span>
           </div>
-        </Link>
-
-        {user && (
-          <div className={styles.userSection}>
-            {user.avatar ? (
-              <img
-                src={user.avatar}
-                alt={user.name}
-                className={styles.avatar}
-              />
-            ) : (
-              <div className={styles.placeholderAvatar}>
-                {user.name.charAt(0).toUpperCase()}
-              </div>
-            )}
-            <span className={styles.username}>@{user.name}</span>
-          </div>
-        )}
+          <FontAwesomeIcon icon={faChevronDown} className={styles.dropdownIcon} />
+        </div>
       </div>
     </nav>
   );

@@ -4,7 +4,7 @@ import patientImg from '../../../assets/images/patientImages/patient.png';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faUserDoctor, faUserInjured } from '@fortawesome/free-solid-svg-icons';
 import { faFacebook } from '@fortawesome/free-brands-svg-icons';
-import google from "../../../assets/images/DrSignUp/google.png";
+import google from "../../../assets/images/drImages/google.png";
 import { useNavigate } from 'react-router-dom';
 
 const ForgotPassword = () => {
