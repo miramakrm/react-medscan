@@ -1,8 +1,14 @@
 import React from 'react';
 import styles from '../MedicalAdvices/MedicalAdvices.module.css';
+import PatientSidebar from "../../../components/patientsidebar/PatientSB";
+import PatientNav from "../../../components/PatientNav/PatientNav";
 
 const  Madvices  = ({ userName, advices }) => {
   return (
+    <div style={{ display: "flex" }}>
+      <PatientSidebar />
+      <div style={{ flex: 1 }}>
+        <PatientNav />
     <div className={styles.container}>
       <div className={styles.header}>
         <p>
@@ -25,6 +31,8 @@ const  Madvices  = ({ userName, advices }) => {
             </ul>
           </div>
         ))}
+      </div>
+    </div>
       </div>
     </div>
   );

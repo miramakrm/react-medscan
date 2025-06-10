@@ -7,6 +7,7 @@ import { IoIosHeartEmpty } from "react-icons/io";
 import { IoClipboardOutline } from "react-icons/io5";
 import { TbReportSearch } from "react-icons/tb";
 import { CiClock2 } from "react-icons/ci";
+import avatar from "../../../assets/images/drImages/patientDashboard.png"; // Adjust the path to your avatar image
 
 const Dashboard = () => {
   const generateTimes = () => {
@@ -45,7 +46,7 @@ const Dashboard = () => {
             <div className={styles.patientHeader}>
               <div className={styles.leftHeader}>
                 <img
-                  src="/path-to-image.jpg"
+                  src={avatar}
                   alt="Patient"
                   className={styles.patientImage}
                 />

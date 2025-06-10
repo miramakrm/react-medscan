@@ -1,6 +1,7 @@
 import React from 'react';
 import styles from '../../ChatbotCss/Chatbot.module.css';
 import { FaArrowLeft, FaBell } from 'react-icons/fa';
+import avatar from '../../../assets/images/drImages/image-dr.png'; // Assuming you have a default avatar image
 
 const ChatbotHeader = ({ user }) => {
   return (
@@ -12,11 +13,13 @@ const ChatbotHeader = ({ user }) => {
 
       <div className={styles.userSection}>
         <FaBell className={styles.icon} />
-        <img
-          src={user?.avatar || "https://i.pravatar.cc/40"}
-          alt="User"
-          className={styles.avatar}
-        />
+ <img
+  src={avatar}
+  alt="User"
+  className={styles.avatar}
+/>
+
+
       </div>
     </header>
   );

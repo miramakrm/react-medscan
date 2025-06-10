@@ -5,6 +5,7 @@ import { LiaHistorySolid } from "react-icons/lia";
 import { MdDocumentScanner } from "react-icons/md";
 import { TfiCommentAlt } from "react-icons/tfi";
 import { IoSettingsOutline, IoExitOutline } from "react-icons/io5";
+import drImg from "../../assets/images/drImages/Image-dr.png";
 
 import styles from "../patientsidebar/PatientSB.module.css";
 import logo from "../../../public/logo.png";
@@ -89,16 +90,16 @@ const PatientSidebar = ({ user }) => {
         <IoSettingsOutline />
         <span>Settings</span>
       </NavLink>
+   <div className={styles.profile}>
+  <img src={drImg} alt="Dr Image" className={styles.userAvatar} />
+  <span>{user?.name || "DR Name"}</span>
+  <NavLink to="/logout">
+    <IoExitOutline className={styles.exitIcon} />
+  </NavLink>
+</div>
 
-      {user && (
-        <div className={styles.profile}>
-          <img src={user.avatar} alt="Patient" className={styles.avatar} />
-          <span>{user.name}</span>
-          <NavLink to="/logout">
-            <IoExitOutline className={styles.exitIcon} />
-          </NavLink>
-        </div>
-      )}
+
+      
     </aside>
   );
 };

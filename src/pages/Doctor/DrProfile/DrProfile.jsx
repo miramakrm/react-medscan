@@ -2,8 +2,10 @@ import React, { useState } from "react";
 import styles from "../DrProfile/DrProfile.module.css";
 import DrSidebar from "../../../components/drsidebar/DoctorSB";
 import drImg from "../../../assets/images/drImages/profil.png";
-import SettingsNav from "../../../components/settingsNav/settingsNav"; 
-
+import DrNavbar from "../../../components/DrNavbar/DrNavbar";
+import { TbEdit } from "react-icons/tb";
+import { Link } from "react-router-dom";
+import { IoTrashOutline } from "react-icons/io5";
 const DoctorProfile = () => {
   const [profile] = useState({
     firstName: "Ahmed",
@@ -21,7 +23,7 @@ const DoctorProfile = () => {
       <div className={styles.layout}>
         <DrSidebar />
         <div className={styles.mainContent}>
-<SettingsNav user={{ profileImage: drImg }} />
+< DrNavbar user={{ profileImage: drImg }} />
           <div className={styles.container}>
             <div className={styles.header}>
               <img src={drImg} alt="Doctor" className={styles.avatar} />
@@ -34,11 +36,11 @@ const DoctorProfile = () => {
               </div>
               <div className={styles.buttons}>
                 <button className={styles.saveBtn}>Save</button>
-                <button className={styles.deleteBtn}>Delete profile</button>
+                <button className={styles.deleteBtn}><IoTrashOutline />Delete profile </button>
               </div>
             </div>
 
-            <button className={styles.editProfileBtn}>Edit Profile ⚙️</button>
+            <button className={styles.editProfileBtn}>Edit Profile <TbEdit /></button>
 
             <div className={styles.tabs}>
               <span className={styles.activeTab}>Personal Information</span>
